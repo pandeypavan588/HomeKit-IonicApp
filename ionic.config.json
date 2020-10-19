@@ -1,0 +1,7 @@
+{
+  "name": "HomeKitApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
