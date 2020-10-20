@@ -1,0 +1,61 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar size="small">
+        <ion-buttons slot="start">
+            <ion-button [routerLink]="['/tabs/home']">
+                <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end">
+            <ion-button (click)="openNotification()">
+                <ion-icon name="notifications-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="doLogout()">
+                <ion-icon name="power-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-card-content>
+            <ion-list>
+                <ion-item>
+                    <ion-avatar class="avatar" slot="start">
+                        <img src="assets/logo.png">
+                    </ion-avatar>
+                    <ion-label>
+                        <h2>User Name</h2>
+                        <h3>example@gmail.com</h3>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-item [routerLink]="['/auth/register']" class="ion-activated">
+            <ion-icon name="scan-outline" slot="start"></ion-icon>
+            <ion-label>Scan Documents</ion-label>
+        </ion-item>
+
+        <ion-item [routerLink]="['/auth/login']">
+            <ion-icon name="bag-add-outline" slot="start"></ion-icon>
+            <ion-label>Add Appliance</ion-label>
+        </ion-item>
+
+        <ion-item class="ion-activated">
+            <ion-icon name="newspaper-outline" slot="start"></ion-icon>
+            <ion-label>News Feed</ion-label>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+            <ion-label>About</ion-label>
+        </ion-item>
+    </ion-card>
+
+</ion-content>

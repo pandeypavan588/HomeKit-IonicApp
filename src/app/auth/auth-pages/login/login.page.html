@@ -1,0 +1,32 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <!-- <ion-button [routerLink]="['/tabs/home']">
+                <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button> -->
+        </ion-buttons>
+        <ion-title></ion-title>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/auth/register">Sign up</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div id="header">
+        <h1>Login</h1>
+        <img src="assets/logo.png" />
+    </div>
+
+    <form id="form" [formGroup]="loginForm" (ngSubmit)="doLogin()">
+        <ion-item>
+            <ion-input type=" email " placeholder="Email " formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input placeholder="Password " [type]="showPassword ? 'text': 'password' " formControlName="password"></ion-input>
+            <ion-icon [name]="showPassword ? 'eye-off': 'eye' " size="large " (click)="togglePasswordFieldType() "></ion-icon>
+        </ion-item>
+
+        <ion-button expand="block " type="submit " shape="round " [disabled]="!loginForm.valid ">Login</ion-button>
+    </form>
+</ion-content>

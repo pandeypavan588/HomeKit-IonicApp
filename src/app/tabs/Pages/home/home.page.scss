@@ -1,0 +1,62 @@
+ion-icon {
+    font-size: 25px;
+}
+
+ion-icon {
+    color: purple;
+}
+
+ion-toolbar {
+    color: purple;
+}
+
+ion-label {
+    color: purple;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid purple;
+}
+
+.headerImg {
+    width: 100px;
+    height: 50px;
+    border-radius: 10%;
+}
+
+ion-slides {
+    height: 100%;
+}
+
+.swiper-slide {
+    display: block;
+}
+
+.swiper-slide strong {
+    margin-top: 1.8rem;
+}
+
+.swiper-slide img {
+    max-height: 30%;
+    max-width: 80%;
+    pointer-events: none;
+}
+
+b {
+    font-weight: 500;
+}
+
+p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ion-color-step-600, #60646b);
+}
+
+p b {
+    color: var(--ion-text-color, #000000);
+}

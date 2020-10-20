@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../auth/gaurds/auth.guard';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -8,29 +9,43 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'account',
+        loadChildren: () => import('./Pages/account/account.module').then( m => m.AccountPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'home',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./Pages/home/home.module').then( m => m.HomePageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'news-feed',
+        loadChildren: () => import('./Pages/news-feed/news-feed.module').then( m => m.NewsFeedPageModule)
       },
+      {
+        path: 'appliance',
+        loadChildren: () => import('./Pages/appliance/appliance.module').then( m => m.AppliancePageModule)
+      },
+      {
+        path: 'scan-document',
+        loadChildren: () => import('./Pages/scan-document/scan-document.module').then( m => m.ScanDocumentPageModule)
+      },
+      
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
-  }
+  },
+  
+ 
+  
+  
 ];
 
 @NgModule({
