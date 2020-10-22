@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         loadChildren: () => import('./Pages/home/home.module').then( m => m.HomePageModule)
       },
       {
@@ -23,25 +23,37 @@ const routes: Routes = [
       },
       {
         path: 'appliance',
+        // canActivate: [AuthGuard],
         loadChildren: () => import('./Pages/appliance/appliance.module').then( m => m.AppliancePageModule)
       },
       {
         path: 'scan-document',
+        canActivate: [AuthGuard],
         loadChildren: () => import('./Pages/scan-document/scan-document.module').then( m => m.ScanDocumentPageModule)
+      },
+      {
+        path: 'add-appliance',
+        
+        loadChildren: () => import('./Pages/add-appliance/add-appliance.module').then( m => m.AddAppliancePageModule)
+      },
+      {
+        path: 'editAppliance/:appliance',
+        loadChildren: () => import('./Pages/add-appliance/add-appliance.module').then( m => m.AddAppliancePageModule)
       },
       
       {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: '/tabs/scan-document',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: '/tabs/scan-document',
     pathMatch: 'full'
   },
+  
   
  
   

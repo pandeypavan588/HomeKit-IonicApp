@@ -7,6 +7,8 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
 import { AuthPageModule } from '../auth/auth.module';
+import { ApplianceService } from '../services/appliance/appliance.service';
+import { FirebaseService } from '../services/firebase/firebase.service';
 
 
 @NgModule({
@@ -18,6 +20,10 @@ import { AuthPageModule } from '../auth/auth.module';
     AuthPageModule,
     
   ],
-  declarations: [TabsPage]
+  declarations: [TabsPage],
+  providers: [
+    ApplianceService,
+    FirebaseService
+  ]
 })
 export class TabsPageModule {}

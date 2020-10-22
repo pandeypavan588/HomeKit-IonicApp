@@ -71,9 +71,21 @@ export class RegisterPage implements OnInit {
     console.log(formData.passwordConfirm);
     
 
-     this.authService.register(formData);
+     this.authService.registerWithEmailAndPassword(formData.email,formData.password)
+     .subscribe({
+      next: (res) => {
+        if (res !== null) {
+            this.router.navigateByUrl(AppRoutes.LOGIN);
+        }
+    },
+    error: (err) => {
+        console.error('Error====>',err);
+        // let errorMsg = err.code.split('/')[1];
+        // this.toastService.presentToast(errorMsg,'danger');
+    }
+     })
 
-    this.router.navigateByUrl(AppRoutes.LOGIN);
+    // this.router.navigateByUrl(AppRoutes.LOGIN);
   }
 
   togglePasswordFieldType(): void {

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { NotificationPage } from 'src/app/components/notification/notification.page';
+import { AppRoutes } from 'src/app/constants/constant';
 
 @Component({
   selector: 'app-account',
@@ -61,7 +62,13 @@ export class AccountPage implements OnInit {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
-            this.authService.logout();
+            // this.authService.logout();
+            this.authService.logout().subscribe(() => {
+              this.router.navigateByUrl(AppRoutes.LOGIN);
+              console.log('Reset Done Moving to Login Page');
+              const errorMsg = "You are Successfully Logged out !"
+              // this.toastService.presentToast(errorMsg,'success');
+          }, error => console.log(error));
           }
         }
       ]
@@ -69,5 +76,7 @@ export class AccountPage implements OnInit {
 
     await alert.present();
   }
+
+  
 
 }

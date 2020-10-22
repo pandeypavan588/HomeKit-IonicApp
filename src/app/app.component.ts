@@ -36,7 +36,7 @@ export class AppComponent {
 
       this.authService.authState.subscribe(state=>{
         if(state){
-          this.router.navigateByUrl(AppRoutes.HOME)
+          this.router.navigateByUrl(AppRoutes.SCAN)
         }else{
           this.router.navigateByUrl(AppRoutes.LOGIN)
         }

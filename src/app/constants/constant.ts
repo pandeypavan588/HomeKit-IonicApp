@@ -3,6 +3,10 @@ export enum AppRoutes {
     REGISTER = 'auth/register',
     HOME = 'tabs/home',
     ACCOUNT = 'tabs/account',
-    TABS = '/tabs'
+    SCAN = 'tabs/scan-document',
+    NEWS = 'tabs/news-feed',
+    APPLIANCE = 'tabs/appliance',
+    TABS = '/tabs',
+    EDITAPPLIANCE = 'tabs/editAppliance'
 
 }

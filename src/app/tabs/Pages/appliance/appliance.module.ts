@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AppliancePageRoutingModule } from './appliance-routing.module';
 
 import { AppliancePage } from './appliance.page';
+import { AddAppliancePage } from '../add-appliance/add-appliance.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { AppliancePage } from './appliance.page';
     IonicModule,
     AppliancePageRoutingModule
   ],
-  declarations: [AppliancePage]
+  declarations: [AppliancePage,AddAppliancePage],
+  
 })
 export class AppliancePageModule {}

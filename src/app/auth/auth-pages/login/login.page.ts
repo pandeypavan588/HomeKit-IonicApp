@@ -29,12 +29,25 @@ export class LoginPage implements OnInit {
 
   doLogin(){
     let formData:userInterface = this.loginForm.value
-       this.authService.login(formData).then((res)=>{
-         console.log('res------>',res)
-         if(res){
-          this.router.navigateByUrl(AppRoutes.HOME)
-         }
-       })
+      //  this.authService.login(formData).then((res)=>{
+      //    console.log('res------>',res)
+      //    if(res){
+      //     this.router.navigateByUrl(AppRoutes.HOME)
+      //    }
+      //  })
+
+      this.authService.loginWithEmailAndPassword(this.loginForm.value.email, this.loginForm.value.password)
+            .subscribe({
+                next: (res) => {
+                    console.log(res, 'Login Successfull');
+                    this.router.navigateByUrl(AppRoutes.APPLIANCE);
+                },
+                error: (err) => {
+                    console.error('Error====>',err);
+                    let errorMsg = err.code.split('/')[1];
+                    // this.toastService.presentToast(errorMsg,'danger');
+                }
+            });
       
     
     
